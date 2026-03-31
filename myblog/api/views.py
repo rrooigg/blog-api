@@ -7,3 +7,8 @@ from .serializers import BlogPostSerializer
 class BlogPostListCreate(generics.ListCreateAPIView):
   queryset = BlogPost.objects.all() # gets all posts that exists
   serializer_class = BlogPostSerializer
+
+class BlogPostRetrieveUpdateDestory(generics.RetrieveUpdateDestroyAPIView):
+  queryset = BlogPost.objects.all()
+  serializer_class = BlogPostSerializer
+  lookup_field = "pk" # primary key = id
